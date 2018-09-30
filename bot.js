@@ -1,4 +1,4 @@
-console.log("The twitter internship bot is starting.");
+console.log("The twitter scholarship bot is starting.");
 
 var Twit = require("twit");
 
@@ -11,8 +11,8 @@ Also: https://dev.twitter.com/rest/public/timelines
 */
 
 var since_id_current = 0;
-var search_query = "#internship OR internship filter:links"; 
-var twitter_screen_name = "ifindinternship"; 
+var search_query = "#scholarship OR scholarship filter:links"; 
+var twitter_screen_name = "InScholarships"; 
 
 //
 // Get the most recent tweet id of the handle and assign to since_id_current
