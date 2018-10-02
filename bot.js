@@ -11,7 +11,7 @@ Also: https://dev.twitter.com/rest/public/timelines
 */
 
 var since_id_current = 0;
-var search_query = "#scholarship OR scholarship filter:links"; 
+var search_query = "#WomenInTech Scholarship filter:links"; 
 var twitter_screen_name = "InScholarships"; 
 
 //
@@ -27,6 +27,7 @@ function find_since_id_current(handle) {
 	T.get('statuses/user_timeline', params, cb);
 	
 	function cb(err, data, response) {
+		    console.log(err);
 		if(!err && data.length > 0)
 			since_id_current = data[0].id_str;
 	}
@@ -40,7 +41,7 @@ function fetchTweets() {
 	var params = {
 		q: search_query,
 		lang: "en", // Process only English tweets
-		count: 5, // Process 5 tweets in a batch
+		count: 1, // Process 5 tweets in a batch
 		since_id: since_id_current
 	}
 
@@ -92,5 +93,5 @@ function retweet(retweet_id) {
 
 find_since_id_current(twitter_screen_name);
 // fetch tweets every 20 minutes
-setInterval(fetchTweets, 1000 * 60 * 20);
-// fetchTweets();
+setInterval(fetchTweets, 1000 * 60 * 1);
+//fetchTweets();
